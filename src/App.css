@@ -1,0 +1,119 @@
+#rooter {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 34px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+/* CONTAINER */
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.navbar > div {
+  height: 50px;
+}
+
+.navbar input {
+  padding: 10px 10px;
+  width: 50%;
+}
+
+nav span {
+  margin-right: 20px;
+  border: 2px solid #37AEB7;
+  border-radius: 4px;
+  padding: 10px 10px;
+}
+
+nav span:not(:nth-child(3)) {
+  background-color: white;
+  color: #37AEB7;
+}
+
+nav span:last-child {
+  background-color: #37AEB7;
+  color: white;
+}
+
+.navbar img {
+  height: 100%;
+}
+
+/* HEADER */
+
+.header-wrapper {
+  height: 371px;
+  background-color: lightsalmon;
+  display: flex;
+  align-items: center;
+}
+
+.header-block {
+  background-color: white;
+  padding: 32px;
+  max-width: 350px;
+}
+
+.cta-main {
+  padding: 10px 20px;
+  background-color: #37AEB7;
+  color: white;
+  border: 2px solid #37AEB7;
+  border-radius: 4px;
+}
+
+/* OFFERS */
+
+.body-block {
+  height: auto;
+  background-color: lightskyblue;
+}
+
+.category-blocks {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-pic {
+  height: 326px;
+  width: 194px;
+  background-color: magenta;
+}
+
+.product-pic img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.avatar-thumb {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
