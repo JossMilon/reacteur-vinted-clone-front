@@ -1,11 +1,11 @@
-#rooter {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 /* TYPOGRAPHY */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+#root {
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
 
 h1 {
   font-size: 34px;
@@ -15,12 +15,26 @@ h1 {
 
 h3 {
   font-size: 24px;
+  margin-top: 30px;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+/* LOADER */
+
+.loader {
+  text-align: center;
+  margin-top: 40vh;
+  font-size: 34px;
 }
 
 /* CONTAINER */
 
 .container {
-  width: 1280px;
+  max-width: 1280px;
+  min-width: 1024px;
   margin: 0 auto;
 }
 
@@ -37,24 +51,45 @@ h3 {
   height: 50px;
 }
 
-.navbar input {
-  padding: 10px 10px;
+.inputBlock {
+  display: flex;
+  align-items: center;
   width: 50%;
 }
 
-nav span {
+.icon {
+  color: #BBBBBB;
+  background-color: #F5F6F7;
+  padding: 10px 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 20px;
+}
+
+.navbar input {
+  padding: 10px 10px;
+  width: 100%;
+  border: none;
+  background-color: #F5F6F7;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 17px;
+}
+
+.navbar nav span, .buy-CTA {
   margin-right: 20px;
   border: 2px solid #37AEB7;
   border-radius: 4px;
   padding: 10px 10px;
+  cursor: pointer;
 }
 
-nav span:not(:nth-child(3)) {
+.navbar nav span:not(:nth-child(3)) {
   background-color: white;
   color: #37AEB7;
 }
 
-nav span:last-child {
+nav span:last-child, .buy-CTA {
   background-color: #37AEB7;
   color: white;
 }
@@ -67,42 +102,51 @@ nav span:last-child {
 
 .header-wrapper {
   height: 371px;
-  background-color: lightsalmon;
+  background-image: url(./assets/images/hreader-background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .header-block {
   background-color: white;
   padding: 32px;
-  max-width: 350px;
+  width: 300px;
+  border-radius: 4px;
 }
 
 .cta-main {
+  cursor: pointer;
   padding: 10px 20px;
   background-color: #37AEB7;
   color: white;
   border: 2px solid #37AEB7;
   border-radius: 4px;
+  width: fit-content;
 }
 
-/* OFFERS */
+/* HOME OFFERS */
 
 .body-block {
   height: auto;
-  background-color: lightskyblue;
 }
 
 .category-blocks {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.product-tile {
+  margin: 25px 0;
 }
 
 .product-pic {
   height: 326px;
   width: 194px;
-  background-color: magenta;
+  cursor: pointer;
 }
 
 .product-pic img {
@@ -111,9 +155,81 @@ nav span:last-child {
   object-fit: cover;
 }
 
+.owner {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
 .avatar-thumb {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 15px;
 }
+
+.product-information {
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* INDIVIDUAL OFFER */
+
+.offer-background {
+  background-color: #EAEDEE;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.offer-picture {
+  width: 400px
+}
+
+.offer-information {
+  width: 350px;
+  background-color: white;
+  padding: 50px;
+}
+
+.offer-top-information {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.offer-top-information > p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.offer-details {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.offer-details span:first-child {
+  color: #BBBBBB;
+  margin-right: 5px;
+}
+
+.offer-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-bottom-information {
+  padding-top: 40px;
+}
+
+.offer-bottom-information h4,
+.offer-bottom-information p {
+  margin-bottom: 20px;
+}
+
+.buy-CTA {
+  text-align: center;
+  margin-top: 40px;
+}
+
