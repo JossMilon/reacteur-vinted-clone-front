@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
 import cookies from "js-cookie";
 
 const Signup = ({setIsConnected}) => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassord] = useState("");
@@ -20,6 +22,7 @@ const Signup = ({setIsConnected}) => {
             const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", formData);
             setIsConnected(true);
             cookies.set("token", response.data.token);
+            navigate("/");
         }
         catch(error) {
             setError(true)

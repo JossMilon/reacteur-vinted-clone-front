@@ -21,7 +21,7 @@ const Navbar = ({isConnected, setIsConnected}) => {
                     <input type="text" placeholder="Recherche des articles" />
                 </div>
                 <nav>
-                    {isConnected? <span onClick={handleDeconnect}>Se déconnecter</span>:
+                    {isConnected? <span className="cta secondary" onClick={handleDeconnect}>Se déconnecter</span>:
                     <>
                         <Link to="signup"><span className="cta secondary">S'inscrire</span></Link>
                         <Link to="login"><span className="cta secondary">Se connecter</span></Link>
