@@ -13,8 +13,7 @@ $vintedMainColor: #37AEB7;
 // TYPOGRAPHY
 h1 {
   font-size: 34px;
-  padding: 5px 10px;
-  margin-bottom: 30px;
+  line-height: 38px;
 }
 
 h3 {
@@ -41,16 +40,14 @@ img {
     object-fit: cover;
 }
 
-
-
-/* LOADER */
+// LOADER
 .loader {
   text-align: center;
   margin-top: 40vh;
   font-size: 34px;
 }
 
-/* CONTAINER */
+// CONTAINER
 .container {
   max-width: 1280px;
   min-width: 1024px;
@@ -59,7 +56,6 @@ img {
 
 // CTAS
 .cta {
-    margin-right: 20px;
     cursor: pointer;
     border: 2px solid $vintedMainColor;
     border-radius: 4px;
@@ -67,6 +63,7 @@ img {
     width: fit-content;
     min-width: 146px;
     text-align: center;
+    font-size: 16px;
 }
 
 .primary {
@@ -79,7 +76,7 @@ img {
     color: $vintedMainColor;
 }
 
-/* NAVBAR */
+// NAVBAR
 
 .navbar {
     display: flex;
@@ -112,14 +109,20 @@ img {
             &:focus {
                 outline: none;
             }
+            &::placeholder {
+                color: lightgrey;
+            }
         }
     }
     nav a {
         text-decoration: none;
     }
+    nav span:nth-child(1) {
+        margin-right: 20px;
+    }
 }
 
-/* HERO HOME */
+// HERO HOME
 
 .hero-wrapper {
     height: 370px;
@@ -131,11 +134,15 @@ img {
         background-color: white;
         padding: 32px;
         width: 300px;
+        height: 150px;
         border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }
 
-/* CATEGORIES HOME */
+// CATEGORIES HOME
 
 .category-blocks {
     display: flex;
@@ -160,7 +167,7 @@ img {
     }
 }
 
-/* OFFER */
+// OFFER
 
 .offer-container {
     background-color: #EAEDEE;
@@ -204,3 +211,47 @@ img {
     }
 }
 
+// FORMS
+
+.form-container {
+    max-width: 300px;
+    margin: 50px auto;
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input:not([type="checkbox"]):not([type="submit"]) {
+            width: 100%;
+            height: 35px;
+            margin-bottom: 20px;
+            border: none;
+            border-bottom: 1px solid #fcced3;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: lightgrey;
+            }
+        }
+        div {
+            align-self: flex-start;
+            input {
+                margin-right: 10px;
+            }
+        }
+        p {
+            font-size: 12px;
+            line-height: 16px;
+            color: grey;
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            margin-top: 40px;
+            width: 100%;
+        }
+    }
+}

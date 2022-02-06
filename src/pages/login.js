@@ -23,15 +23,15 @@ const Login = ({setIsConnected}) => {
         }
     };
     return (
-        <>
-            <h2>Se connecter</h2>
+        <div className="form-container">
+            <h1>Se connecter</h1>
             <form>
                 <input onChange={(e) => {setEmail(e.target.value)}} type="email" placeholder="Email"/>
                 <input onChange={(e) => {setPassord(e.target.value)}} type="password" placeholder="Mot de passe"/>
-                <input onClick={handleSubmit} type="submit" value="S'inscrire"/>
+                <input className="cta primary" onClick={handleSubmit} type="submit" value="S'inscrire"/>
                 {error && <p>Il y a une couille dans le potage</p>}
         </form>
-        </>
+        </div>
     )
 };
 

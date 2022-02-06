@@ -7,8 +7,7 @@
 
 h1 {
   font-size: 34px;
-  padding: 5px 10px;
-  margin-bottom: 30px;
+  line-height: 38px;
 }
 
 h3 {
@@ -36,14 +35,12 @@ img {
      object-fit: cover;
 }
 
-/* LOADER */
 .loader {
   text-align: center;
   margin-top: 40vh;
   font-size: 34px;
 }
 
-/* CONTAINER */
 .container {
   max-width: 1280px;
   min-width: 1024px;
@@ -51,7 +48,6 @@ img {
 }
 
 .cta {
-  margin-right: 20px;
   cursor: pointer;
   border: 2px solid #37AEB7;
   border-radius: 4px;
@@ -61,6 +57,7 @@ img {
   width: fit-content;
   min-width: 146px;
   text-align: center;
+  font-size: 16px;
 }
 
 .primary {
@@ -73,7 +70,6 @@ img {
   color: #37AEB7;
 }
 
-/* NAVBAR */
 .navbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -124,11 +120,30 @@ img {
   outline: none;
 }
 
+.navbar .inputContainer input::-webkit-input-placeholder {
+  color: lightgrey;
+}
+
+.navbar .inputContainer input:-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.navbar .inputContainer input::-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.navbar .inputContainer input::placeholder {
+  color: lightgrey;
+}
+
 .navbar nav a {
   text-decoration: none;
 }
 
-/* HERO HOME */
+.navbar nav span:nth-child(1) {
+  margin-right: 20px;
+}
+
 .hero-wrapper {
   height: 370px;
   background: url(./assets/images/hreader-background.jpg) no-repeat center;
@@ -147,10 +162,20 @@ img {
   background-color: white;
   padding: 32px;
   width: 300px;
+  height: 150px;
   border-radius: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-/* CATEGORIES HOME */
 .category-blocks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -187,7 +212,6 @@ img {
   margin-top: 5px;
 }
 
-/* OFFER */
 .offer-container {
   background-color: #EAEDEE;
   padding: 20px;
@@ -245,5 +269,77 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 50px;
+}
+
+.form-container {
+  max-width: 300px;
+  margin: 50px auto;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"]) {
+  width: 100%;
+  height: 35px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"]):focus {
+  outline: none;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"])::-webkit-input-placeholder {
+  color: lightgrey;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"]):-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"])::-ms-input-placeholder {
+  color: lightgrey;
+}
+
+.form-container form input:not([type="checkbox"]):not([type="submit"])::placeholder {
+  color: lightgrey;
+}
+
+.form-container form div {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.form-container form div input {
+  margin-right: 10px;
+}
+
+.form-container form p {
+  font-size: 12px;
+  line-height: 16px;
+  color: grey;
+  margin-top: 20px;
+}
+
+.form-container form input[type="submit"] {
+  margin-top: 40px;
+  width: 100%;
 }
 /*# sourceMappingURL=App.css.map */

@@ -26,8 +26,8 @@ const Signup = ({setIsConnected}) => {
         }
     };
     return (
-        <>
-            <h2>S'inscrire</h2>
+        <div className="form-container">
+            <h1>S'inscrire</h1>
             <form>
                 <input onChange={(e) => {setUsername(e.target.value)}} type="text" placeholder="Nom d'utilisateur"/>
                 <input onChange={(e) => {setEmail(e.target.value)}} type="email" placeholder="Email"/>
@@ -37,10 +37,11 @@ const Signup = ({setIsConnected}) => {
                     <label htmlFor="newsletter">S'inscrire à notre newsletter</label>
                 </div>
                 <p>En m'inscrivant je confirme avoir lu et accepté les Termes & Conditions et Politique de Confidentialité de Vinted. Je confirme avoir au moins 18 ans.</p>
-                <input onClick={handleSubmit} type="submit" value="S'inscrire"/>
+                <input className="cta primary" onClick={handleSubmit} type="submit" value="S'inscrire"/>
                 {error && <p>Il y a  une couille  dans le potage</p>}
-        </form>
-        </>
+            </form>
+        </div>
+
     )
 };
 
