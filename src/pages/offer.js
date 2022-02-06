@@ -17,7 +17,7 @@ const Offer = () => {
     }, [id])
     return isLoading? <p className="loader">Content is loading...</p>:
     (
-        <div className="offer-background">
+        <div className="offer-container">
             <div className="offer-picture">
                 <img src={data.product_image.secure_url} alt=""/>
             </div>
@@ -44,7 +44,7 @@ const Offer = () => {
                             <span>{data.owner.account.username}</span>
                         </div> 
                 </div>
-                <div className="buy-CTA">Acheter</div>
+                <div className="cta primary">Acheter</div>
             </div>
         </div>
     )

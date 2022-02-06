@@ -17,15 +17,15 @@ const Home = () => {
     return isLoading? <p className="loader">Content is loading...</p>:
     (
         <>
-            <div className="header-wrapper">
+            <div className="hero-wrapper">
                 <div className="container">
-                    <div className="header-block">
+                    <div className="hero-block">
                         <h1>Prêt à faire du tri dans vos placard ? </h1>
-                        <div className="cta-main">Commencez à vendre</div>
+                        <div className="cta primary">Commencez à vendre</div>
                     </div>
                 </div>
             </div>
-            <div className="container body-block">
+            <div className="container">
                 <div className="categories">
                     <h3>Articles populaires</h3>
                     <div className="category-blocks">
