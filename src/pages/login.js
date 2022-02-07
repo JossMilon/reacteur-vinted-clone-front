@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
 import cookies from "js-cookie";
 
 const Login = ({setIsConnected}) => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassord] = useState("");
     const [error, setError] = useState(false);
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = {
@@ -32,6 +32,7 @@ const Login = ({setIsConnected}) => {
                 <input onChange={(e) => {setPassord(e.target.value)}} type="password" placeholder="Mot de passe"/>
                 <input className="cta primary" onClick={handleSubmit} type="submit" value="S'inscrire"/>
                 {error && <p>Il y a une couille dans le potage</p>}
+                <Link to="/signup"><p>Pas encore inscrit(e) ? Créez votre compte ici</p></Link>
         </form>
         </div>
     )

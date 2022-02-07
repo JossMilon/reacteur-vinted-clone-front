@@ -1,7 +1,7 @@
-import placeholder from "../assets/images/placeholder-avatar.jpg";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import {useState, useEffect} from "react";
+import CategoryBlock from "../components/category-block";
+import Hero from "../components/hero";
 
 const Home = () => {
     const [data, setData] =  useState({});
@@ -19,36 +19,11 @@ const Home = () => {
         <>
             <div className="hero-wrapper">
                 <div className="container">
-                    <div className="hero-block">
-                        <h1>Prêt à faire du tri dans vos placard ? </h1>
-                        <div className="cta primary">Commencez à vendre</div>
-                    </div>
+                    <Hero/>
                 </div>
             </div>
             <div className="container">
-                <div className="categories">
-                    <h3>Articles populaires</h3>
-                    <div className="category-blocks">
-                        {
-                            data.offers.map((product, index) => {
-                                return (
-                                    <div key={index} className="product-tile">
-                                        <div className="owner">
-                                        {product.owner.account.avatar? <img className="avatar-thumb" src={product.owner.account.avatar.url} alt="avatar" />: <img className="avatar-thumb" src={placeholder} alt="avatar" />}
-                                        <span>{product.owner.account.username}</span>
-                                        </div> 
-                                        <div className="product-pic">
-                                            <Link to={`/offer/${product._id}`}><img src={product.product_image.secure_url} alt="#"/></Link>
-                                        </div>
-                                        <div className="product-information">
-                                            <p>{product.product_price}€</p>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
+                <CategoryBlock data={data} categoryTitle="Articles populaires"/>
             </div>
         </>
 
