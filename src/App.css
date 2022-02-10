@@ -87,18 +87,22 @@ img {
   height: 50px;
 }
 
-.navbar .inputContainer {
+.navbar .allFilter {
+  width: 50%;
+}
+
+.navbar .allFilter .inputContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50%;
+  width: 100%;
   color: #BBBBBB;
 }
 
-.navbar .inputContainer .icon {
+.navbar .allFilter .inputContainer .icon {
   padding: 10px 10px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -106,7 +110,7 @@ img {
   background-color: #F5F6F7;
 }
 
-.navbar .inputContainer input {
+.navbar .allFilter .inputContainer input {
   padding: 10px 10px;
   width: 100%;
   border: none;
@@ -116,23 +120,23 @@ img {
   font-size: 17px;
 }
 
-.navbar .inputContainer input:focus {
+.navbar .allFilter .inputContainer input:focus {
   outline: none;
 }
 
-.navbar .inputContainer input::-webkit-input-placeholder {
+.navbar .allFilter .inputContainer input::-webkit-input-placeholder {
   color: lightgrey;
 }
 
-.navbar .inputContainer input:-ms-input-placeholder {
+.navbar .allFilter .inputContainer input:-ms-input-placeholder {
   color: lightgrey;
 }
 
-.navbar .inputContainer input::-ms-input-placeholder {
+.navbar .allFilter .inputContainer input::-ms-input-placeholder {
   color: lightgrey;
 }
 
-.navbar .inputContainer input::placeholder {
+.navbar .allFilter .inputContainer input::placeholder {
   color: lightgrey;
 }
 
@@ -180,15 +184,15 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .category-blocks .product-tile {
-  margin: 25px 0;
+  margin: 25px 9px;
 }
 
 .category-blocks .product-tile .product-pic {

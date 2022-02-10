@@ -9,7 +9,7 @@ const Offer = () => {
     const [isLoading, setIsLoading] =useState(true);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await axios.get(`https://lereacteur-vinted-api.herokuapp.com/offer/${id}`);
+            const response = await axios.get(`https://reacteur-vinted-backend-jm.herokuapp.com/offer/${id}`);
             setData(response.data);
             setIsLoading(false);
         };

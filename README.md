@@ -1,3 +1,9 @@
+Still to be done
+Populate with 4 (3 with pics) users and 12 offers
+Refine the token storage based on lesson 10
+Move on to next day exercices
+Handle responsive
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

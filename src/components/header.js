@@ -3,7 +3,10 @@ import cookies from "js-cookie";
 import logo from "../assets/images/vinted_logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Navbar = ({isConnected, setIsConnected}) => {
+const Navbar = ({isConnected, setIsConnected, setSearchBar}) => {
+    const handleChange = (e) => {
+        setSearchBar(e.target.value);
+    };
     const handleDeconnect = () => {
         cookies.remove("token");
         setIsConnected(false);
@@ -16,9 +19,11 @@ const Navbar = ({isConnected, setIsConnected}) => {
                         <img src={logo} alt="vinted logo"/>
                     </Link>
                 </div>
-                <div className="inputContainer">
-                    <FontAwesomeIcon icon="search" className="icon"/>
-                    <input type="text" placeholder="Recherche des articles" />
+                <div className="allFilter">
+                    <div className="inputContainer">
+                        <FontAwesomeIcon icon="search" className="icon"/>
+                        <input onChange={handleChange} type="text" placeholder="Recherche des articles" />
+                    </div>
                 </div>
                 <nav>
                     {isConnected? <span className="cta secondary" onClick={handleDeconnect}>Se déconnecter</span>:

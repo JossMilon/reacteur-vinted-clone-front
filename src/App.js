@@ -15,11 +15,12 @@ library.add(faSearch);
 
 function App() {
   const [isConnected, setIsConnected] = useState(false);
+  const [searchBar, setSearchBar] = useState("");
   return (
     <Router>
-      <Navbar isConnected={isConnected} setIsConnected={setIsConnected}/>
+      <Navbar isConnected={isConnected} setIsConnected={setIsConnected} setSearchBar={setSearchBar}/>
       <Routes>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<Home searchBar={searchBar} />}/>
         <Route path="/offer/:id" element={<Offer />}/>
         <Route path="/signup/" element={<Signup setIsConnected={setIsConnected} />}/>
         <Route path="/login/" element={<Login setIsConnected={setIsConnected} />}/>

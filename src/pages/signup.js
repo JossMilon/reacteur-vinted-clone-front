@@ -19,7 +19,7 @@ const Signup = ({setIsConnected}) => {
             password: password
         }
         try {
-            const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", formData);
+            const response = await axios.post("https://reacteur-vinted-backend-jm.herokuapp.com/user/signup", formData);
             setIsConnected(true);
             cookies.set("token", response.data.token);
             navigate("/");
