@@ -1,9 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import {useState} from "react";
 import axios from "axios";
-import cookies from "js-cookie";
 
-const Signup = ({setIsConnected}) => {
+const Signup = ({setUser}) => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -13,19 +12,19 @@ const Signup = ({setIsConnected}) => {
     const [error, setError] = useState(false);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const formData = {
-            username: username,
-            email: email, 
-            password: password
-        }
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("email", email);
+        formData.append("password", password);
         try {
             const response = await axios.post("https://reacteur-vinted-backend-jm.herokuapp.com/user/signup", formData);
-            setIsConnected(true);
-            cookies.set("token", response.data.token);
+            // const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", formData);
+            setUser(response.data.token);
             navigate("/");
         }
         catch(error) {
-            setError(true)
+            //For unknown reason I used a back office with error instead of message for the subscribe route
+            setError(error.response.data.message);
         }
     };
     return (
@@ -41,7 +40,7 @@ const Signup = ({setIsConnected}) => {
                 </div>
                 <p>En m'inscrivant je confirme avoir lu et accepté les Termes & Conditions et Politique de Confidentialité de Vinted. Je confirme avoir au moins 18 ans.</p>
                 <input className="cta primary" onClick={handleSubmit} type="submit" value="S'inscrire"/>
-                {error && <p>Il y a  une couille  dans le potage</p>}
+                {error && <p className="error">{error}</p>}
                 <Link to="/login"><p>Déjà inscrit ? Connectez-vous ici</p></Link>
             </form>
         </div>
