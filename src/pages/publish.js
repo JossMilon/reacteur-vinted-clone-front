@@ -5,7 +5,7 @@ import InputField from "../components/inputField";
 import axios from "axios";
 
 const Publish = ({token}) => {
-    const [image, setImage] = useState("");    
+    const [image, setImage] = useState({});    
     const [title, setTitle] = useState("Air Max 90");
     const [description, setDescription] = useState("Toutes neuves");
     const [brand, setBrand] = useState("Nike");
@@ -30,7 +30,6 @@ const Publish = ({token}) => {
         try {
             // const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/offer/publish",
             const response = await axios.post("https://reacteur-vinted-backend-jm.herokuapp.com/offer/publish", 
-
             formData, 
             {headers: {
                 'Authorization': `Bearer ${token}`}
@@ -45,7 +44,7 @@ const Publish = ({token}) => {
     <div className="publish-background">
         <div className="publish container">
             <h1>Vends ton article</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="file">Ajouter une image</label>
                     <input onChange={(e) => {setImage(e.target.files[0])}} type="file" id="file" placeholder="Ajouter une image" />
@@ -64,7 +63,7 @@ const Publish = ({token}) => {
                 <div>
                     <InputField id="price" type="number" setFunc={setPrice} label="Prix" placeholder="0.00"/>
                 </div>
-                <input className="cta primary" onClick={handleSubmit} type="submit" value="Publier l'article"/>
+                <input className="cta primary" type="submit" value="Publier l'article"/>
                 {error && <p className="error">{error}</p>}
             </form>
         </div>

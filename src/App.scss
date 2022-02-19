@@ -247,14 +247,14 @@ img {
 
 .categories {
     h3 {
-        margin-left: 9px;
+        margin-left: 10px;
     }
     .category-blocks {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
+        margin: 0 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
         .product-tile {
-            margin: 25px 9px;
+            margin: 25px 0;
             .product-pic {
                 height: 326px;
                 width: 194px;
@@ -273,6 +273,13 @@ img {
     }
 }
 
+@media (max-width: 600px) {
+    .category-blocks {
+        justify-items:center;
+        
+    }
+}
+
 // OFFER
 
 .offer-container {
@@ -281,9 +288,10 @@ img {
     display: flex;
     justify-content: center;
     .offer-picture {
-        width: 400px;
+        max-width: 400px;
     }
     .offer-information {
+        max-width: fit-content;
         width: 350px;
         background-color: white;
         padding: 50px 25px;
@@ -422,3 +430,17 @@ img {
     }
 }
 
+@media (max-width: 600px) {
+    .publish-background {
+        h1 {
+            text-align: center;
+        }
+        padding: 50px 0;
+        div input {
+            min-width: 65%;
+        }
+        div label {
+            max-width: 25%;
+        }
+    }
+}

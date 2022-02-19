@@ -321,22 +321,19 @@ img {
 }
 
 .categories h3 {
-  margin-left: 9px;
+  margin-left: 10px;
 }
 
 .categories .category-blocks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  margin: 0 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(194px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
 }
 
 .categories .category-blocks .product-tile {
-  margin: 25px 9px;
+  margin: 25px 0;
 }
 
 .categories .category-blocks .product-tile .product-pic {
@@ -360,6 +357,12 @@ img {
   margin-top: 5px;
 }
 
+@media (max-width: 600px) {
+  .category-blocks {
+    justify-items: center;
+  }
+}
+
 .offer-container {
   background-color: #EAEDEE;
   padding: 20px;
@@ -372,10 +375,13 @@ img {
 }
 
 .offer-container .offer-picture {
-  width: 400px;
+  max-width: 400px;
 }
 
 .offer-container .offer-information {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   width: 350px;
   background-color: white;
   padding: 50px 25px;
@@ -588,5 +594,20 @@ img {
   font-size: 12px;
   line-height: 16px;
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .publish-background {
+    padding: 50px 0;
+  }
+  .publish-background h1 {
+    text-align: center;
+  }
+  .publish-background div input {
+    min-width: 65%;
+  }
+  .publish-background div label {
+    max-width: 25%;
+  }
 }
 /*# sourceMappingURL=App.css.map */
