@@ -12,7 +12,7 @@ export default function CheckoutForm({id, amount, description}) {
         const stripeResponse = await stripe.createToken(cardElementData, {name: id});
         const stripeToken = stripeResponse.token.id;
         console.log(stripeToken);
-        const response = await axios.post("http://localhost:3000/payment", {
+        const response = await axios.post("https://reacteur-vinted-backend-jm.herokuapp.com/payment", {
             amount: amount*100,
             description: description,
             "stripeToken": stripeToken
