@@ -1,12 +1,16 @@
 import placeholder from "../assets/images/placeholder-avatar.jpg";
 import axios from "axios";
 import {useState, useEffect} from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Offer = () => {
     const {id} = useParams();
     const [data, setData] =  useState({});
     const [isLoading, setIsLoading] =useState(true);
+    const navigate = useNavigate();
+    const handlePay = () => {
+        navigate(`/payment/`, {state: {"amount": data.product_price, "description": data.product_name}});
+    };
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get(`https://reacteur-vinted-backend-jm.herokuapp.com/offer/${id}`);
@@ -45,7 +49,7 @@ const Offer = () => {
                             <span>{data.owner.account.username}</span>
                         </div> 
                 </div>
-                <div className="cta primary">Acheter</div>
+                <div onClick={handlePay} className="cta primary">Acheter</div>
             </div>
         </div>
     )

@@ -516,12 +516,18 @@ img {
   color: red;
 }
 
-.publish-background {
+.background {
   background-color: #EAEDEE;
-  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 0;
 }
 
-.publish-background .publish {
+.background .publish {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -531,7 +537,7 @@ img {
           flex-direction: column;
 }
 
-.publish-background .publish div {
+.background .publish div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -548,7 +554,7 @@ img {
   border: 1px solid #ebedee;
 }
 
-.publish-background .publish div input {
+.background .publish div input {
   width: calc(50% - 24px);
   font-size: 16px;
   border: none;
@@ -557,39 +563,39 @@ img {
   height: fit-content;
 }
 
-.publish-background .publish div input:not(:last-child) {
+.background .publish div input:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.publish-background .publish div input:focus {
+.background .publish div input:focus {
   outline: none;
 }
 
-.publish-background .publish div input::-webkit-input-placeholder {
+.background .publish div input::-webkit-input-placeholder {
   color: #C4C7C9;
 }
 
-.publish-background .publish div input:-ms-input-placeholder {
+.background .publish div input:-ms-input-placeholder {
   color: #C4C7C9;
 }
 
-.publish-background .publish div input::-ms-input-placeholder {
+.background .publish div input::-ms-input-placeholder {
   color: #C4C7C9;
 }
 
-.publish-background .publish div input::placeholder {
+.background .publish div input::placeholder {
   color: #C4C7C9;
 }
 
-.publish-background .publish div input[type="text"], .publish-background .publish div input[type="number"] {
+.background .publish div input[type="text"], .background .publish div input[type="number"] {
   border-bottom: 1px solid #ebedee;
 }
 
-.publish-background .publish div label {
+.background .publish div label {
   width: calc(50% - 24px);
 }
 
-.publish-background .publish div .error {
+.background .publish div .error {
   color: red;
   font-size: 12px;
   line-height: 16px;
@@ -597,17 +603,95 @@ img {
 }
 
 @media (max-width: 600px) {
-  .publish-background {
+  .background {
     padding: 50px 0;
   }
-  .publish-background h1 {
+  .background h1 {
     text-align: center;
   }
-  .publish-background div input {
+  .background div input {
     min-width: 65%;
   }
-  .publish-background div label {
+  .background div label {
     max-width: 25%;
+  }
+}
+
+.background .paymentBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 500px;
+  background-color: white;
+}
+
+.background .paymentBlock .topPayment {
+  width: calc(100% - 40px);
+  padding: 20px;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.background .paymentBlock .topPayment p {
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #BBBBBB;
+}
+
+.background .paymentBlock .topPayment label {
+  color: #808080;
+}
+
+.background .paymentBlock .topPayment div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.background .paymentBlock .bottomPayment {
+  width: calc(100% - 40px);
+  padding: 20px;
+}
+
+.background .paymentBlock .bottomPayment .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.background .paymentBlock .bottomPayment p, .background .paymentBlock .bottomPayment .stripeCardInput {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #BBBBBB;
+}
+
+.background .paymentBlock .bottomPayment p strong, .background .paymentBlock .bottomPayment .stripeCardInput strong {
+  font-weight: 700;
+}
+
+.background .paymentBlock .bottomPayment input {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .background .paymentBlock .topPayment, .background .paymentBlock .bottomPayment {
+    padding: 10px;
   }
 }
 /*# sourceMappingURL=App.css.map */

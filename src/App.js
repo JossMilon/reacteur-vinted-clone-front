@@ -9,26 +9,32 @@ import Offer from './pages/offer';
 import Navbar from './components/header';
 import Signup from './pages/signup';
 import Login from './pages/login';
+import Publish from './pages/publish';
+import Payment from './pages/payment';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSearch, faBars } from '@fortawesome/free-solid-svg-icons';
-import Publish from './pages/publish';
 library.add(faSearch, faBars);
 
 function App() {
   const [token, setToken] = useState(cookies.get("token") || null);
+  const [id, setId] = useState(cookies.get("id") || null);
   const [searchBar, setSearchBar] = useState("");
   const [sorting, setSorting] = useState("price-asc");
   const [max, setMax] = useState("");
   const [min, setMin] = useState("");
-  const setUser = (token) => {
+  const setUser = (token, id) => {
     if (token) {
       cookies.set("token", token);
+      cookies.set("id", id);
       setToken(token);
+      setId(id)
     }
     else {
       cookies.remove("token");
+      cookies.remove("id");
       setToken(null);
+      setId(null);
     }
   };
   return (
@@ -53,6 +59,7 @@ function App() {
         <Route path="/signup/" element={<Signup setUser={setUser} />}/>
         <Route path="/login/" element={<Login setUser={setUser} />}/>
         <Route path="/publish" element={<Publish token={token}/>} />
+        <Route path="/payment/" element={<Payment id={id} token={token}/>} />
       </Routes>
     </Router>
   );

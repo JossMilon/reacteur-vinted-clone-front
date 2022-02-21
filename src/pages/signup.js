@@ -19,7 +19,7 @@ const Signup = ({setUser}) => {
         try {
             const response = await axios.post("https://reacteur-vinted-backend-jm.herokuapp.com/user/signup", formData);
             // const response = await axios.post("https://lereacteur-vinted-api.herokuapp.com/user/signup", formData);
-            setUser(response.data.token);
+            setUser(response.data.token, response.data._id);
             navigate("/");
         }
         catch(error) {

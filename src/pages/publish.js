@@ -41,7 +41,7 @@ const Publish = ({token}) => {
         }
     }
     return !token? <Navigate to="/login" />:(
-    <div className="publish-background">
+    <div className="background">
         <div className="publish container">
             <h1>Vends ton article</h1>
             <form onSubmit={handleSubmit}>
